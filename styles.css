@@ -1,0 +1,108 @@
+* {
+  font-family: sans-serif;
+}
+body {
+  background: radial-gradient(circle at center, #001f3f, #003366, #000814);
+}
+.game_header {
+  display: flex;
+  column-gap: 30%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 25px;
+  .header {
+    font-family: "Audiowide", cursive;
+    color: white;
+  }
+  .reset-btn {
+    background: linear-gradient(135deg, #007bff, #00bfff);
+    color: #fff;
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-family: "Audiowide", cursive;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.8);
+    background: linear-gradient(135deg, #00bfff, #007bff);
+  }
+  button:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+  }
+}
+.game_grid {
+  display: flex;
+  column-gap: 12px;
+  row-gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 20%;
+  margin-top: 40px;
+}
+.card {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border: 2px solid rgb(83, 125, 223);
+  border-radius: 6px;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+}
+.card img {
+  width: fit-content;
+}
+.card.open-box {
+  transform: rotateY(0deg);
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(120, 124, 139);
+  transition: 0.25s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+}
+.open-box::after,
+.matched-box::after {
+  transform: rotateY(180deg);
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+  .game_grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .game_grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .game_grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 480px;
+    padding: 0;
+  }
+  .game_header {
+    align-items: center;
+  }
+}
