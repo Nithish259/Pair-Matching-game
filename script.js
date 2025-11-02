@@ -65,6 +65,7 @@ function createCards() {
           ) {
             document.querySelector("#main").style.background =
               "radial-gradient(circle at center, #001f3f, #33ff00ff, #000814)";
+            document.querySelector(".win-message").innerHTML = "🎉You won";
           }
         }, 500);
       }
@@ -79,6 +80,7 @@ createCards();
 
 document.querySelector(".reset-btn").addEventListener("click", () => {
   document.querySelector("#main").style.background = "";
+  document.querySelector(".win-message").innerHTML = "";
   shuffleArray(imgs);
   createCards();
 });

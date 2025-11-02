@@ -2,11 +2,12 @@
   font-family: sans-serif;
 }
 body {
+  max-height: 100vh;
   background: radial-gradient(circle at center, #001f3f, #003366, #000814);
 }
 .game_header {
   display: flex;
-  column-gap: 30%;
+  column-gap: 26%;
   justify-content: flex-end;
   align-items: center;
   padding: 25px;
@@ -38,6 +39,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
   }
 }
+
+.win-message {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+  font-family: "Audiowide", cursive;
+  color: white;
+}
+
 .game_grid {
   display: flex;
   column-gap: 12px;
@@ -45,7 +55,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-inline: 20%;
+  padding-inline: 10%;
   margin-top: 40px;
 }
 .card {
@@ -82,17 +92,17 @@ body {
 /* Responsive grid adjustments */
 @media (max-width: 1024px) {
   .game_grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 600px;
-    padding: 0;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 700px;
   }
 }
 
 @media (max-width: 768px) {
   .game_grid {
     grid-template-columns: repeat(3, 1fr);
-    max-width: 600px;
+    max-width: 800px;
     padding: 0;
+    padding-top: 80px;
   }
 }
 
@@ -103,6 +113,10 @@ body {
     padding: 0;
   }
   .game_header {
-    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    width: 100px;
+    height: 100px;
   }
 }
